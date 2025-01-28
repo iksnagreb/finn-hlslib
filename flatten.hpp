@@ -36,7 +36,7 @@
 
 #include <ap_int.h>
 #include <ap_fixed.h>
-#include <ap_float.h>
+//#include <ap_float.h>
 
 #include <hls_vector.h>
 #include <cstddef>
@@ -71,10 +71,10 @@ ap_uint<W> to_bitimage(ap_fixed<W, I, Q, O, N> const &val) {
 	return  val(W-1, 0);
 }
 
-template<int W, int E>
-ap_uint<W> to_bitimage(ap_float<W, E> const &val) {
-	return (ap_uint<1>(val.sign_ref()), val.exponent_ref(), val.mantissa_ref());
-}
+//template<int W, int E>
+//ap_uint<W> to_bitimage(ap_float<W, E> const &val) {
+//	return (ap_uint<1>(val.sign_ref()), val.exponent_ref(), val.mantissa_ref());
+//}
 
 // Floating-point Specializations
 ap_uint<16> to_bitimage(half const &val) {
